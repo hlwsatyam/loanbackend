@@ -448,7 +448,7 @@ app.post(`/api/leads`, async (req, res) => {
 app.post(`/api/lead`, async (req, res) => {
   const { mobile } = req.body;
   try {
-   
+
     const leads = await Form.findOne({ mobile });
     return res.status(200).json(leads);
   } catch (error) {
@@ -918,6 +918,11 @@ app.delete("/api/bank-details/:id", async (req, res) => {
     res.status(500).json({ error: "Failed to delete bank detail" });
   }
 });
+
+app.get('/', (req, res) => {
+  res.json({ message: "Hello" })
+})
+
 
 // Start the server
 const PORT = process.env.PORT || 5000;
