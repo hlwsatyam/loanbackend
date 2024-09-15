@@ -131,7 +131,7 @@ const removeOldJunkLeads = async () => {
 };
 
 // Run the cleanup every second
-// setInterval(removeOldJunkLeads, 60000);
+setInterval(removeOldJunkLeads, 60000);
 
 const BankDetailSchema = new mongoose.Schema({
   bankName: { type: String, required: true },
